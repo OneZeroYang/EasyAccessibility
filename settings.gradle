@@ -1,2 +1,3 @@
+include ':easyAccessibility'
 include ':app'
 rootProject.name = "EasyAccessibility"
