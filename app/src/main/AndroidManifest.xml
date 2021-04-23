@@ -18,8 +18,8 @@
         </activity>
 
 
-
-        <service android:name="com.zerocode.easyaccessibility.EasyAccessibilityService"
+        <service
+            android:name="com.zerocode.easyaccessibility.EasyAccessibilityService"
             android:description="@string/accessibility_describe"
             android:label="Service Demo"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
