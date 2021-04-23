@@ -1,10 +1,11 @@
 package com.zerocode.easyaccessibility
 
 import android.accessibilityservice.AccessibilityService
-import android.content.Context
 import android.util.Log
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
+import com.zerocode.easyaccessibility.api.BaseEasyApi
+import com.zerocode.easyaccessibility.callback.UpDateCurrentAppListener
 import java.lang.RuntimeException
 
 /**
@@ -12,7 +13,8 @@ import java.lang.RuntimeException
  * @author ZeroCode
  * @date 2021/4/22:9:52
  */
-class EasyAccessibilityService : AccessibilityService() {
+class EasyAccessibilityService : AccessibilityService(),
+    BaseEasyApi {
 
 
     companion object {
@@ -139,5 +141,60 @@ class EasyAccessibilityService : AccessibilityService() {
      */
     fun getRootView()  = rootInWindow ?: throw RuntimeException("获取根节点失败！")
 
+
+
+    /**
+     * 返回操作
+     */
+    override fun back(): Boolean =  performGlobalAction(AccessibilityService.GLOBAL_ACTION_BACK)
+
+    /**
+     * 返回桌面
+     */
+    override fun backHome(): Boolean =   performGlobalAction(AccessibilityService.GLOBAL_ACTION_HOME)
+
+    /**
+     * 电源菜单
+     */
+    override fun powerDialog(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_POWER_DIALOG)
+
+    /**
+     * 通知栏
+     */
+    override fun showNotificationBar(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_NOTIFICATIONS)
+
+    /**
+     * 展开通知栏 > 快捷设置
+     */
+    override fun quickSettings(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_QUICK_SETTINGS)
+
+
+    /**
+     * 锁屏
+     */
+    override fun lockScreen(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_LOCK_SCREEN)
+
+
+    /**
+     * 截屏
+     */
+    override fun screenShot(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_TAKE_SCREENSHOT)
+
+    /**
+     * 最近任务
+     */
+    override fun workList(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_RECENTS)
+
+    /**
+     * 分屏
+     */
+    override fun splitScreen(): Boolean =
+          performGlobalAction(AccessibilityService.GLOBAL_ACTION_TOGGLE_SPLIT_SCREEN)
 
 }

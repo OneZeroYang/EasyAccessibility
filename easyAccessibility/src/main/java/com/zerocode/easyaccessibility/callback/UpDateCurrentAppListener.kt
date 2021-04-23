@@ -1,4 +1,4 @@
-package com.zerocode.easyaccessibility
+package com.zerocode.easyaccessibility.callback
 /**
  * 页面更新监听
  * @author ZeroCode

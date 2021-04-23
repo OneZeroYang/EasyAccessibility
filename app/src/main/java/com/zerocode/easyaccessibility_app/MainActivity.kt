@@ -3,9 +3,9 @@ package com.zerocode.easyaccessibility_app
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.zerocode.easyaccessibility.EasyAbyService
-import com.zerocode.easyaccessibility.isOpenAccessibilityService
-import com.zerocode.easyaccessibility.jumpAccessibilityServiceSettings
+import com.zerocode.easyaccessibility.EasyApi
+import com.zerocode.easyaccessibility.tools.isOpenAccessibilityService
+import com.zerocode.easyaccessibility.tools.jumpAccessibilityServiceSettings
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             Thread.sleep(4000)
-            val click = EasyAbyService.withTxt("设置")
+            val click = EasyApi.withTxt("设置")
             click?.click()
 
 

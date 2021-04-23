@@ -1,10 +1,11 @@
-package com.zerocode.easyaccessibility
+package com.zerocode.easyaccessibility.tools
 
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import com.zerocode.easyaccessibility.EasyAccessibilityService
 import com.zerocode.easyaccessibility.viewnode.ViewNode
 import com.zerocode.easyaccessibility.viewnode.ViewRoot
 
@@ -40,3 +41,4 @@ fun findById(Id:String): ViewNode? {
 fun findByDesc(Desc:String):ViewNode?{
     return mViewRoot.findByDesc(Desc)
 }
+

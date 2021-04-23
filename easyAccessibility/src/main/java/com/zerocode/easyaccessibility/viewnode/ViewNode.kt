@@ -1,5 +1,6 @@
 package com.zerocode.easyaccessibility.viewnode
 
+import android.accessibilityservice.AccessibilityService
 import android.os.Build
 import android.os.Bundle
 import android.view.accessibility.AccessibilityNodeInfo
@@ -136,20 +137,28 @@ class ViewNode(private val node: AccessibilityNodeInfo, path: Int = 0) : ViewNod
     /**
      * 触发长按
      */
-    override fun longClick()=node.performAction(AccessibilityNodeInfo.ACTION_LONG_CLICK)
+    override fun longClick() = node.performAction(AccessibilityNodeInfo.ACTION_LONG_CLICK)
 
 
     /**
      * 连续2次点击
+     * TODO 连续2次点击
      */
-    override fun twiceClick() :Boolean{
-       return false
+    override fun twiceClick(min: Long): Boolean {
+        val longClick1 = longClick()
+        Thread.sleep(min)
+        val longClick2 = longClick()
+        return longClick1 && longClick2
     }
 
     /**
      * 输入文字
      */
-    override fun inputText(string: String) {text=string}
+    override fun inputText(string: String) {
+        text = string
+    }
+
+
 
 
 }
