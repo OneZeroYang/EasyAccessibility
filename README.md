@@ -9,23 +9,23 @@
 maven { url 'https://jitpack.io' }
  
 如下：
-`
+````
 allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-`
+````
 
 在 app 目录下build.gradle 文件中 添加
 
 如下
-`
+````
 dependencies {
 	        implementation 'com.github.OneZeroYang:EasyAccessibility:1.1.0'
 	}
-`
+````
 
 ## 如何初始化
 
